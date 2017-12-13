@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+
+<form method="post" action="signup">
+<input type="text" name="username" placeholder="User name"><br>
+<input type="password" name="password" placeholder="Password"><br>
+<input type="submit" value="Sign Up">
+</form>
+{{#if errorMessage}}
+<p>Username already exists</p>
+{{/if}}

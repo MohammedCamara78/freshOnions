@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html class="fo_freshonion">
+<head>
+  <div id="logo">
+    <img src="images/1.jpg" />
+    <title>Fresh Onions</title>
+  </div>
+</head>
+</html>
+<!DOCTYPE html>
+<html>
+  <head>
+<title>{{title}}</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+  body {background-color: powderblue;}
+  h1   {color: black;}
+  h2  {color: black;}
+  h3  {color: black;}
+  .box {
+  	background:#f7f7f7;
+  	border:1px solid #f0e9eb;
+  	padding:15px;
+  }
+
+  </style>
+  <script>
+  // Activate Carousel
+  $("#myCarousel").carousel();
+
+  // Enable Carousel Indicators
+  $(".item").click(function(){
+      $("#myCarousel").carousel(1);
+  });
+
+  // Enable Carousel Controls
+  $(".left").click(function(){
+      $("#myCarousel").carousel("prev");
+  });
+  </script>
+  </head>
+  <body>
+    {{{body}}}
+    <div class="container">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <img src="images/Bleach_Photos11.jpg" alt="Bleach_Photos11" style="width:50%;">
+          </div>
+
+          <div class="item">
+            <img src="images/Bleach_pic16.jpg" alt="Bleach_pic16" style="width:100%;">
+          </div>
+
+          <div class="item">
+            <img src="images/Bleach_pics13.jpg" alt="Bleach_pics13" style="width:100%;">
+          </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <script>
+    app.controller('myCtrl',	function($scope,	$http)	{
+    		$scope.submit	=	function	()	{
+    				$http.post("http://localhost:3000/formAngular",
+    				JSON.stringify($scope.example))
+    				.then(function(response){
+    								$scope.titleFromServer	=	response.data.title;
+    								$scope.paragraphFromServer	=	response.data.paragraph;
+    								$scope.fromServer	=	response.data.fromServer;
+    				}); //	.then
+    		};	//	$scope.submit
+    });	//	app.controller
+    </script>
+
+  </body>
+</html>
