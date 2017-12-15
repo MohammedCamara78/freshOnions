@@ -17,5 +17,13 @@ router.post('/freshOnions',	function(req,	res)	{
 
 });
 
+router.get('/contact',	function(req,	res)	{
+		res.render('users/contact');
+    });
 
+//	http://localhost:3000/formAngular
+router.post('/contact',	function(req,	res)	{
+
+
+});
 module.exports = router;

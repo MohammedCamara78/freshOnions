@@ -34,7 +34,7 @@ function loggedIn(req, res, next) {
 
 router.get('/profile',loggedIn, function(req, res){
       // req.user: passport middleware adds "user" object to HTTP req object
-      res.render('profile', { person: req.user.body });
+      res.render('profile', { person: req.user });
 });
 
 function notLoggedIn(req, res, next) {
@@ -45,9 +45,6 @@ function notLoggedIn(req, res, next) {
   }
 }
 
-router.get('/images', function(req, res){
-  res.render('images');
-});
 router.get('/login', notLoggedIn, function(req, res){
     //success is set true in sign up page
     //req.flash('error') is mapped to 'message' from passport middleware
@@ -113,7 +110,7 @@ router.post('/signup',
     }
   });
 });
-
+// GET REVIEWS
 router.get('/review', function(req, res){
   res.render('review', { person: req.user });
 
@@ -121,10 +118,122 @@ router.get('/review', function(req, res){
 
 router.post('/review', function(req, res, next){
 
+
+});
+// GET ps3
+router.get('/ps3', function(req, res){
+  res.render('ps3', { title: req.user });
+
 });
 
+router.post('/ps3', function(req, res, next){
+
+
+});
+// GET ps4
+router.get('/ps4', function(req, res){
+  res.render('ps4', { title: req.user });
+
+});
+
+router.post('/ps4', function(req, res, next){
+
+
+});
+// GET xbox360
+router.get('/xbox360', function(req, res){
+  res.render('xbox360', { title: req.user });
+
+});
+
+router.post('/xbox360', function(req, res, next){
+
+
+});
+// GET xboxone
+router.get('/xboxone', function(req, res){
+  res.render('xboxone', { title: req.user });
+
+});
+
+router.post('/xboxone', function(req, res, next){
+
+
+});
+// GET wii-u
+router.get('/wii-u', function(req, res){
+  res.render('wii-u', { title: req.user });
+
+});
+
+router.post('/wii-u', function(req, res, next){
+
+
+});
+// GET pc
+router.get('/pc', function(req, res){
+  res.render('pc', { title: req.user });
+
+});
+
+router.post('/pc', function(req, res, next){
+
+
+});
+// GET samsung
+router.get('/samsung', function(req, res){
+  res.render('samsung', { title: req.user });
+
+});
+
+router.post('/samsung', function(req, res, next){
+
+
+});
+// GET iphone
+router.get('/iphone', function(req, res){
+  res.render('iphone', { title: req.user });
+
+});
+
+router.post('/iphone', function(req, res, next){
+
+
+});
+// GET android
+router.get('/android', function(req, res){
+  res.render('android', { title: req.user });
+
+});
+
+router.post('/android', function(req, res, next){
+
+
+});
+
+// GET /contact
+router.get('/contact', function(req, res) {
+  res.render('contact', { title: req.user });
+});
+router.post('/contact', function(req, res, next){
+
+
+});
+
+// GET /about-us
+router.get('/aboutUs', function(req, res) {
+  res.render('aboutUs', { title: req.user });
+});
+router.post('/aboutUs', function(req, res, next){
+
+
+});
 router.get('/freshOnions', function(req, res){
   res.render('/freshOnions');
+});
+
+router.get('/images', function(req, res){
+  res.render('images');
 });
 
 module.exports = router;
