@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><!DOCTYPE html>
+
+<div class="col-md-3" style="box">
+  <h4>Platforms:</h4>
+  <a href="xbox">Xbox</a><br />
+  <a href="playstation">PlayStation</a> <br />
+  <a href="nintendo">Nintendo</a> <br />
+  <a href="mobile">Mobile</a> <br />
+  <a href="pc">PC</a> <br /><br /><br />
+</div>
+
+<form class="col-md-9" method="post" action="playstation">
+<p>
+  Games for PlayStation
+</p>
+{{#each rows}}
+{{#if imgurl}}
+<a><img src="{{imgurl}}" alt="{{title}} pic"></a>
+{{/if}}
+<input type="submit" name="gametitle" value="{{title}}">
+<a>{{rating}}/5</a><br><br>
+{{/each}}
+</form>

@@ -1,0 +1,42 @@
+<div class="col-md-2" style="box">
+  <h4>Platforms:</h4>
+  <a href="xbox">Xbox</a><br />
+  <a href="playstation">PlayStation</a> <br />
+  <a href="nintendo">Nintendo</a> <br />
+  <a href="mobile">Mobile</a> <br />
+  <a href="pc">PC</a> <br /><br /><br />
+</div>
+<div class="col-md-2"><img src="{{{imgurl}}}" alt="pic">
+</div>
+<form method="post" action="gamePage">
+<div class="col-md-4">
+{{#each rows}}
+ <input type="hidden" name="gametitle" value="{{title}}">
+ <input type="hidden" name="score" value={{score}}>
+ <input type="hidden" name="votes" value={{votes}}>
+<b style="text-align: left; font-size: 40px;">{{title}} {{rating}}/5</b><br>
+{{/each}}
+</div>
+<a class="col-md-4">
+  <input type="radio" name="opinion" value=5>Awesome<br>
+  <input type="radio" name="opinion" value=4>Good<br>
+  <input type="radio" name="opinion" value=3 checked>Meh<br>
+  <input type="radio" name="opinion" value=2>Bad<br>
+  <input type="radio" name="opinion" value=1>Awful<br>
+  <input type="radio" name="opinion" value=0>Ruined my Life<br>
+  <input type="submit" value="Cast your vote">
+</a>
+</form><br>
+
+<form method="post" action="reviewredirect">
+<a class="col-md-8">
+  {{reviews.reviewtitle}}
+{{#if reviews}}
+{{#each reviews}}
+<div>{{reviewtitle}}</div>
+<div>{{reviewparagraph}}</div><br><br>
+{{/each}}
+{{/if}}
+</a>
+<input type="submit" value="Write a Review" class ="col-md-4">
+</form><br>
